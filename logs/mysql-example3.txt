@@ -1,0 +1,34 @@
+❯ npm run mysql-overdraft-protection-demo
+
+> overdraft-protection-demo@0.0.1 mysql-overdraft-protection-demo
+> ./run-mysql.sh overdraft-demo
+
+testing with READ COMMITTED
+transaction successfully committed! debited 200 from checking
+transaction successfully committed! debited 200 from saving
+result of 1 transaction
+fulfilled
+result of 2 transaction
+fulfilled
+final balances
+v1 = -100, v2 = -100
+testing with REPEATABLE READ
+transaction successfully committed! debited 200 from saving
+transaction successfully committed! debited 200 from checking
+result of 1 transaction
+fulfilled
+result of 2 transaction
+fulfilled
+final balances
+v1 = -100, v2 = -100
+testing with SERIALIZABLE
+SequelizeDatabaseError
+ER_LOCK_DEADLOCK
+rolling back failed transaction...
+transaction successfully committed! debited 200 from checking
+result of 1 transaction
+fulfilled
+result of 2 transaction
+rejected
+final balances
+v1 = -100, v2 = 100

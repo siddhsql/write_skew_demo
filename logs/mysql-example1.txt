@@ -1,0 +1,92 @@
+❯ npm run mysql-black-white-demo
+
+> overdraft-protection-demo@0.0.1 mysql-black-white-demo
+> ./run-mysql.sh black-white-demo
+
+testing with READ COMMITTED
+inital state
+black
+white
+black
+white
+black
+white
+black
+white
+black
+white
+transaction successfully committed! changed black to white
+transaction successfully committed! changed white to black
+result of 1 transaction
+fulfilled
+result of 2 transaction
+fulfilled
+final values
+black
+black
+black
+black
+black
+black
+black
+black
+black
+black
+testing with REPEATABLE READ
+inital state
+black
+white
+black
+white
+black
+white
+black
+white
+black
+white
+transaction successfully committed! changed black to white
+transaction successfully committed! changed white to black
+result of 1 transaction
+fulfilled
+result of 2 transaction
+fulfilled
+final values
+black
+black
+black
+black
+black
+black
+black
+black
+black
+black
+testing with SERIALIZABLE
+inital state
+black
+white
+black
+white
+black
+white
+black
+white
+black
+white
+transaction successfully committed! changed white to black
+transaction successfully committed! changed black to white
+result of 1 transaction
+fulfilled
+result of 2 transaction
+fulfilled
+final values
+white
+white
+white
+white
+white
+white
+white
+white
+white
+white

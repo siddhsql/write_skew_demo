@@ -1,0 +1,48 @@
+❯ npm run mysql-intersecting-data-demo
+
+> overdraft-protection-demo@0.0.1 mysql-intersecting-data-demo
+> ./run-mysql.sh intersecting-data-demo
+
+testing with READ COMMITTED
+transaction successfully committed! totaled 1 and inserted total into 2
+transaction successfully committed! totaled 2 and inserted total into 1
+result of 1 transaction
+fulfilled
+result of 2 transaction
+fulfilled
+final values
+class = 1, value = 10
+class = 1, value = 20
+class = 2, value = 100
+class = 2, value = 200
+class = 2, value = 30
+class = 1, value = 300
+testing with REPEATABLE READ
+transaction successfully committed! totaled 2 and inserted total into 1
+transaction successfully committed! totaled 1 and inserted total into 2
+result of 1 transaction
+fulfilled
+result of 2 transaction
+fulfilled
+final values
+class = 1, value = 10
+class = 1, value = 20
+class = 2, value = 100
+class = 2, value = 200
+class = 1, value = 300
+class = 2, value = 30
+testing with SERIALIZABLE
+SequelizeDatabaseError
+ER_LOCK_DEADLOCK
+rolling back failed transaction...
+transaction successfully committed! totaled 1 and inserted total into 2
+result of 1 transaction
+fulfilled
+result of 2 transaction
+rejected
+final values
+class = 1, value = 10
+class = 1, value = 20
+class = 2, value = 100
+class = 2, value = 200
+class = 2, value = 30

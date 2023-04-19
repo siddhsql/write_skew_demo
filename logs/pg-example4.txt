@@ -1,0 +1,137 @@
+❯ npm run pg-rgb-demo
+
+> concurrency-demo@0.0.1 pg-rgb-demo
+> ./run-pg.sh rgb-demo
+
+testing with READ COMMITTED
+inital state
+red
+green
+blue
+red
+green
+blue
+red
+green
+blue
+red
+green
+blue
+red
+green
+blue
+transaction successfully committed! changed red to green
+transaction successfully committed! changed green to blue
+transaction successfully committed! changed blue to red
+result of 1 transaction
+fulfilled
+result of 2 transaction
+fulfilled
+result of 3 transaction
+fulfilled
+final values
+red
+red
+red
+red
+red
+red
+red
+red
+red
+red
+red
+red
+red
+red
+red
+testing with REPEATABLE READ
+inital state
+red
+green
+blue
+red
+green
+blue
+red
+green
+blue
+red
+green
+blue
+red
+green
+blue
+transaction successfully committed! changed red to green
+transaction successfully committed! changed green to blue
+transaction successfully committed! changed blue to red
+result of 1 transaction
+fulfilled
+result of 2 transaction
+fulfilled
+result of 3 transaction
+fulfilled
+final values
+green
+green
+green
+green
+green
+blue
+blue
+blue
+blue
+blue
+red
+red
+red
+red
+red
+testing with SERIALIZABLE
+inital state
+red
+green
+blue
+red
+green
+blue
+red
+green
+blue
+red
+green
+blue
+red
+green
+blue
+transaction successfully committed! changed red to green
+Committing transaction dbb72a1f-7781-4a93-b45f-1a83a40a33d1 failed with error "could not serialize access due to read/write dependencies among transactions". We are killing its connection as it is now in an undetermined state.
+Committing transaction 12874cf9-9169-492a-9c44-8d777f4a73a3 failed with error "could not serialize access due to read/write dependencies among transactions". We are killing its connection as it is now in an undetermined state.
+SequelizeDatabaseError
+40001
+rolling back failed transaction...
+SequelizeDatabaseError
+40001
+rolling back failed transaction...
+result of 1 transaction
+fulfilled
+result of 2 transaction
+rejected
+result of 3 transaction
+rejected
+final values
+green
+blue
+green
+blue
+green
+blue
+green
+blue
+green
+blue
+green
+green
+green
+green
+green

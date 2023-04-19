@@ -1,0 +1,34 @@
+❯ npm run pg-overdraft-protection-demo
+
+> overdraft-protection-demo@0.0.1 pg-overdraft-protection-demo
+> ./run-pg.sh overdraft-demo
+
+testing with READ COMMITTED
+transaction successfully committed! debited 200 from checking
+you do not have sufficient balance to complete the transaction
+result of 1 transaction
+fulfilled
+result of 2 transaction
+fulfilled
+final balances
+v1 = -100, v2 = 100
+testing with REPEATABLE READ
+transaction successfully committed! debited 200 from checking
+transaction successfully committed! debited 200 from saving
+result of 1 transaction
+fulfilled
+result of 2 transaction
+fulfilled
+final balances
+v1 = -100, v2 = -100
+testing with SERIALIZABLE
+transaction successfully committed! debited 200 from checking
+SequelizeDatabaseError
+40001
+rolling back failed transaction...
+result of 1 transaction
+fulfilled
+result of 2 transaction
+rejected
+final balances
+v1 = -100, v2 = 100
